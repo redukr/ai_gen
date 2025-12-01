@@ -7,6 +7,8 @@ from tools.generator import generate_image
 from tools.image_tools import cut_center_transparent
 from tools.csv_loader import load_params
 
+pipe = None
+
 save_folder = ""
 overlay_path = ""
 generating = False
@@ -14,7 +16,6 @@ cancel_generation = False
 
 
 AVAILABLE_MODELS = {
-    "Deliberate (SD1.5)": ("sd15", r"models\Deliberate"),
     "RealVisXL (SDXL)": ("sdxl", r"models\realvisxl"),
     "SDXL Base 1.0": ("sdxl", r"models\stable-diffusion-xl-base-1.0")
 }
@@ -65,8 +66,11 @@ def generate_images_thread():
     model_name = model_var.get()
     model_type, model_path = AVAILABLE_MODELS[model_name]
 
+    global pipe
     from tools.generator import load_model
-    pipe = load_model(model_type, model_path)
+
+    if pipe is None:
+        pipe = load_model(model_type, model_path)
 
     for i in range(count):
         width = int(entry_width.get())

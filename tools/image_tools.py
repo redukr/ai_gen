@@ -6,7 +6,7 @@ def cut_center_transparent(base_img, overlay_img):
     Якщо overlay_img = None — повертає base_img як є.
     """
 
-    if overlay_img is None:
+    if not overlay_img:
         return base_img
 
     # Якщо шляху нема — повертаємо початкове
