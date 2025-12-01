@@ -1,0 +1,17 @@
+D:\PRJ\ai_generator\
+│
+├── app.py
+├── app.spec
+├── build.py
+├── build_to_exe_v5.bat
+├── config.py
+├── requirements.txt
+│
+├── tools\
+│   ├── csv_loader.py
+│   ├── generator.py
+│   └── image_tools.py
+│
+└── models\
+    └── realvisxl\
+        ... (118 файлів, 89 папок — модель SDXL RealVisXL)

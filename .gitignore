@@ -1,0 +1,12 @@
+/build
+/clean_venv
+/venv
+/models/Deliberate
+/models/stable-diffusion-xl-base-1.0
+/models/realvisxl
+/tools/__pycache__
+/export
+/__pycache__
+/clean_venv
+*.pyc
+*.exe
